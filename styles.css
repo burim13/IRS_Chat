@@ -9,7 +9,9 @@
   --danger: #b3402a;
   --excerpt-bg: #fbf6ec;
   --excerpt-border: #d9c8a3;
-  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-ui: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-family: var(--font-ui);
 }
 
 * { box-sizing: border-box; }
@@ -20,6 +22,15 @@ body {
   color: var(--text);
   height: 100vh;
   overflow: hidden;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 /* ---------- API key overlay ---------- */
@@ -224,11 +235,15 @@ button.danger:hover { background: #8f3220; }
   font-size: 0.9rem;
 }
 .excerpt blockquote {
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.5rem;
+  font-family: var(--font-serif);
   font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.55;
   white-space: pre-wrap;
 }
 .excerpt cite {
+  font-family: var(--font-ui);
   font-style: normal;
   font-size: 0.78rem;
   color: var(--muted);
