@@ -9,13 +9,19 @@
           "code": "f1040",
           "file": "2025/forms/f1040.pdf",
           "number": "Form 1040",
-          "title": "U.S. Individual Income Tax Return"
+          "title": "U.S. Individual Income Tax Return",
+          "family": "1040",
+          "related": []
         },
         {
           "code": "f1040sc",
           "file": "2025/forms/f1040sc.pdf",
           "number": "Schedule C (Form 1040)",
-          "title": "Profit or Loss From Business (Sole Proprietorship)"
+          "title": "Profit or Loss From Business (Sole Proprietorship)",
+          "family": "1040sc",
+          "related": [
+            "p334"
+          ]
         }
       ],
       "instructions": [
@@ -23,13 +29,19 @@
           "code": "i1040gi",
           "file": "2025/instructions/i1040gi.pdf",
           "number": "Instructions for Form 1040",
-          "title": "Instructions for Form 1040 and Form 1040-SR"
+          "title": "Instructions for Form 1040 and Form 1040-SR",
+          "family": "1040",
+          "related": []
         },
         {
           "code": "i1040sc",
           "file": "2025/instructions/i1040sc.pdf",
           "number": "Instructions for Schedule C (Form 1040)",
-          "title": "Instructions for Schedule C"
+          "title": "Instructions for Schedule C",
+          "family": "1040sc",
+          "related": [
+            "p334"
+          ]
         }
       ],
       "publications": [
@@ -37,7 +49,12 @@
           "code": "p334",
           "file": "2025/publications/p334.pdf",
           "number": "Publication 334",
-          "title": "Tax Guide for Small Business"
+          "title": "Tax Guide for Small Business",
+          "family": "334",
+          "related": [
+            "f1040sc",
+            "i1040sc"
+          ]
         }
       ]
     }

@@ -133,6 +133,8 @@ function writeManifest() {
           file: `${year}/${category}/${file}`,
           number: catalogEntry.number || code,
           title: catalogEntry.title || '',
+          family: catalogEntry.family || code,
+          related: catalogEntry.related || [],
         };
       });
     }

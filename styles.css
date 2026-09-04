@@ -178,6 +178,24 @@ button.danger:hover { background: #8f3220; }
 .doc-item .doc-number { display: block; font-weight: 600; font-size: 0.8rem; }
 .doc-item .doc-title { display: block; color: var(--muted); font-size: 0.75rem; }
 
+.doc-family { margin-bottom: 0.5rem; }
+.doc-family:last-child { margin-bottom: 0; }
+
+.see-also {
+  padding: 0.1rem 0.5rem 0.4rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.see-also-link {
+  background: none;
+  color: var(--accent);
+  padding: 0;
+  font-size: 0.72rem;
+  text-decoration: underline;
+  border-radius: 0;
+}
+.see-also-link:hover { color: var(--accent-dark); background: none; }
+
 .settings-panel[hidden] { display: none; }
 .settings-panel {
   border-top: 1px solid var(--border);
