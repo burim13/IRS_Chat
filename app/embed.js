@@ -33,3 +33,14 @@ export function cosineSimilarity(a, b) {
   // Vectors are already normalized at embed time, so dot product == cosine similarity.
   return dot;
 }
+
+// index.json stores each chunk's embedding as base64-encoded Float32 (built
+// by scripts/build-index.js) rather than a JSON number array, since at
+// ~100+ documents the naive text representation would run into the
+// hundreds of megabytes.
+export function decodeEmbedding(base64) {
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return new Float32Array(bytes.buffer);
+}

@@ -5,6 +5,7 @@
   "description": "Download + index scripts for the IRS Document Research Chat app. Run via GitHub Actions or locally.",
   "type": "commonjs",
   "scripts": {
+    "discover": "node discover.js",
     "download": "node download.js",
     "build-index": "node build-index.js"
   },

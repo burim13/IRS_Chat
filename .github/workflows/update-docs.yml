@@ -42,6 +42,10 @@ jobs:
             echo "year=$(date -u +%Y)" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Refresh catalog from irs.gov
+        working-directory: scripts
+        run: node discover.js
+
       - name: Download documents
         working-directory: scripts
         run: node download.js ${{ steps.vars.outputs.year }}
@@ -54,7 +58,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add irs-docs
+          git add irs-docs scripts/catalog.js
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

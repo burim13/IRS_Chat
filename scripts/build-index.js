@@ -58,6 +58,15 @@ function chunkText(text) {
   return chunks;
 }
 
+// Embeddings are stored as base64-encoded Float32 (not JSON number arrays)
+// and doc metadata (code/category/number/title) is stored once per document
+// rather than repeated on every chunk - at the milestone's 5-doc scale the
+// naive format was already 14MB; at ~100 docs it would run into the
+// hundreds of MB, which a browser can't reasonably fetch and parse.
+function encodeEmbedding(floatArray) {
+  return Buffer.from(Float32Array.from(floatArray).buffer).toString('base64');
+}
+
 // --- Main --------------------------------------------------------------------
 
 async function main() {
@@ -67,12 +76,12 @@ async function main() {
 
   async function embed(text) {
     const output = await embedder(text, { pooling: 'mean', normalize: true });
-    return Array.from(output.data);
+    return output.data;
   }
 
   const yearDir = path.join(DOCS_ROOT, YEAR);
+  const docs = [];
   const chunks = [];
-  let chunkId = 0;
 
   for (const doc of catalog) {
     const pdfPath = path.join(yearDir, doc.category, `${doc.code}.pdf`);
@@ -81,29 +90,24 @@ async function main() {
       continue;
     }
     console.log(`Extracting ${doc.code}...`);
+    const docIndex = docs.length;
+    docs.push({ code: doc.code, category: doc.category, number: doc.number, title: doc.title, year: YEAR });
+
     const pages = await extractPages(pdfPath);
+    let chunkCount = 0;
     for (let pageNum = 0; pageNum < pages.length; pageNum++) {
       const pageChunks = chunkText(pages[pageNum]);
       for (const text of pageChunks) {
         const embedding = await embed(text);
-        chunks.push({
-          id: `${YEAR}-${doc.code}-${chunkId++}`,
-          code: doc.code,
-          category: doc.category,
-          number: doc.number,
-          title: doc.title,
-          year: YEAR,
-          page: pageNum + 1,
-          text,
-          embedding,
-        });
+        chunks.push({ d: docIndex, page: pageNum + 1, text, e: encodeEmbedding(embedding) });
+        chunkCount++;
       }
     }
-    console.log(`  -> ${pages.length} pages, ${chunks.filter((c) => c.code === doc.code).length} chunks`);
+    console.log(`  -> ${pages.length} pages, ${chunkCount} chunks`);
   }
 
-  fs.writeFileSync(path.join(yearDir, 'index.json'), JSON.stringify(chunks));
-  console.log(`\nWrote ${chunks.length} chunks to ${path.join(yearDir, 'index.json')}`);
+  fs.writeFileSync(path.join(yearDir, 'index.json'), JSON.stringify({ docs, chunks }));
+  console.log(`\nWrote ${chunks.length} chunks across ${docs.length} docs to ${path.join(yearDir, 'index.json')}`);
 
   writeManifest();
 }

@@ -1,15 +1,22 @@
-import { embedText, cosineSimilarity } from './embed.js';
+import { embedText, cosineSimilarity, decodeEmbedding } from './embed.js';
 import { getApiKey } from './apiKey.js';
 
 const TOP_K = 5;
 const SIMILARITY_THRESHOLD = 0.25;
 const ANTHROPIC_MODELS_URL = 'https://api.anthropic.com/v1/messages';
 
+// yearIndex is { docs: [{code,category,number,title,year}], chunks: [{d, page, text, e}] }
+// (see scripts/build-index.js) - resolve each chunk's doc reference and
+// decode its embedding so callers get a flat, self-contained object.
 function retrieveChunks(queryEmbedding, yearIndex) {
-  const scored = yearIndex.map((chunk) => ({
-    chunk,
-    score: cosineSimilarity(queryEmbedding, chunk.embedding),
-  }));
+  const scored = yearIndex.chunks.map((raw) => {
+    const doc = yearIndex.docs[raw.d];
+    const embedding = decodeEmbedding(raw.e);
+    return {
+      chunk: { ...doc, page: raw.page, text: raw.text },
+      score: cosineSimilarity(queryEmbedding, embedding),
+    };
+  });
   scored.sort((a, b) => b.score - a.score);
   return scored.filter((s) => s.score >= SIMILARITY_THRESHOLD).slice(0, TOP_K);
 }

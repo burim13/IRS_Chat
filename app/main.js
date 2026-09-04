@@ -52,7 +52,7 @@ async function selectYear(year) {
   statusEl.textContent = `Loading search index for ${year}...`;
   try {
     state.yearIndex = await loadYearIndex(year);
-    statusEl.textContent = `${state.yearIndex.length} indexed excerpts available for ${year}.`;
+    statusEl.textContent = `${state.yearIndex.chunks.length} indexed excerpts across ${state.yearIndex.docs.length} documents for ${year}.`;
   } catch (err) {
     statusEl.textContent = `Could not load index for ${year}: ${err.message}`;
   }
@@ -88,7 +88,7 @@ function wireChatForm() {
     e.preventDefault();
     const question = input.value.trim();
     if (!question) return;
-    if (!state.yearIndex || !state.yearIndex.length) {
+    if (!state.yearIndex || !state.yearIndex.chunks.length) {
       addNoAnswer('No documents are indexed for the selected year yet.');
       return;
     }

@@ -7,10 +7,12 @@ and it runs periodically to pull documents from irs.gov and rebuild the search i
 
 ## How it works
 
-1. A GitHub Action (`.github/workflows/update-docs.yml`) downloads PDFs from irs.gov into
-   `irs-docs/{year}/{forms,instructions,publications}/`, extracts their text, chunks it,
-   embeds each chunk with a small local model, and writes `irs-docs/{year}/index.json` plus
-   a top-level `irs-docs/manifest.json` describing what's available.
+1. A GitHub Action (`.github/workflows/update-docs.yml`) regenerates the document catalog
+   from irs.gov's live listing (`discover.js`), downloads the matching PDFs into
+   `irs-docs/{year}/{forms,instructions,publications}/` (`download.js`), extracts their
+   text, chunks it, embeds each chunk with a small local model, and writes
+   `irs-docs/{year}/index.json` plus a top-level `irs-docs/manifest.json` describing what's
+   available (`build-index.js`).
 2. The static site (`index.html` + `app/*.js`) asks for a Claude API key on first load,
    stores it in `localStorage` on that browser only, and uses it to call
    `api.anthropic.com` directly from the browser.
@@ -22,11 +24,28 @@ and it runs periodically to pull documents from irs.gov and rebuild the search i
    The "Exact language" excerpts shown to the user come directly from the index, never from
    the model, so they are guaranteed verbatim.
 
-## Milestone 1 (current)
+## Catalog scope
 
-Tax year 2025 only, five documents: Form 1040, Schedule C, Pub 334, and their instructions.
-See `scripts/catalog.js` to add more documents — each entry is `{ code, category, number,
-title }`, where `code` is the irs.gov filename stem (e.g. `f1040`).
+The catalog covers individual + small-business tax filing (the 1040 family and its
+schedules, common credit/deduction forms, and the frequently-referenced publications) —
+not IRS's full ~3,129-document listing, most of which is estate/gift, exempt orgs, excise,
+payroll, and international forms this app has no reason to index. Currently 110 documents
+for tax year 2025.
+
+To change what's covered: edit the `SEARCHES` list in `scripts/catalogConfig.js` (each
+entry issues one search against irs.gov's current-forms listing and keeps only the exact
+English-language product numbers you list — anything not found is reported, not silently
+dropped) and the `RELATED` map (editorial "See also" cross-links, keyed by the normalized
+`family` discover.js derives from each product number). Then regenerate:
+
+```bash
+cd scripts
+node discover.js       # rewrites catalog.js from catalogConfig.js
+node download.js 2025
+node build-index.js 2025
+```
+
+`catalog.js` itself is auto-generated — don't hand-edit it, edit `catalogConfig.js` instead.
 
 ## Local development
 
@@ -63,11 +82,18 @@ after pushing. No build step is required.
 
 ## Known limitations / next steps
 
-- `index.json` grows with the number of chunks (~14 MB for the 5-document milestone set);
-  at full catalog scale this may need splitting per category or quantizing embeddings.
+- `index.json` is ~45 MB for the current 110-document/16,601-chunk catalog. Each chunk
+  stores its embedding as base64-encoded Float32 (not a JSON number array) and doc metadata
+  is de-duplicated into a separate `docs` array (see `scripts/build-index.js`) — without
+  that, this same catalog would have landed in the 100MB+ range. If it needs to shrink
+  further, quantizing embeddings to int8 (4x smaller than Float32) is the next lever, at a
+  small cosine-similarity accuracy cost.
 - The download script tries `irs-prior/{code}--{year}.pdf` then falls back to
-  `irs-pdf/{code}.pdf` (current revision) — good enough for milestone 1's fixed catalog, but
-  scaling to "all forms for a year" will need to parse the `/prior-year-forms-and-instructions?find=`
-  results table instead of a hardcoded catalog.
+  `irs-pdf/{code}.pdf` (current revision) — this covers every code in the catalog, including
+  the in-progress tax year before it's mirrored into `irs-prior`.
 - Cosine similarity threshold (`SIMILARITY_THRESHOLD` in `app/chat.js`) is a rough cutoff
-  tuned by eye — revisit once there's more document variety to test against.
+  tuned by eye — revisit if it starts missing relevant matches or returning noise now that
+  the corpus is much larger and more varied.
+- `discover.js` matches product numbers exactly against `catalogConfig.js` — if the IRS
+  renames or discontinues a document (it happened to Pubs 535 and 536), it's reported as
+  "NOT FOUND" rather than silently missing; check the Action's logs occasionally.
