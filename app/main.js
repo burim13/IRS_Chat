@@ -43,19 +43,35 @@ async function selectYear(year) {
   state.yearIndex = null;
   localStorage.setItem(YEAR_STORAGE_KEY, year);
   renderDocTree(state.manifest, year);
+  setChatEnabled(false, year ? `Loading documents for ${year}...` : 'No indexed years available.');
 
   const statusEl = document.getElementById('index-status');
   if (!year) {
     statusEl.textContent = 'No indexed years available.';
     return;
   }
-  statusEl.textContent = `Loading search index for ${year}...`;
+  // The index is tens of MB (base64-encoded embeddings for every indexed
+  // chunk) - fetching and JSON-parsing it takes real time on a normal
+  // connection, so chat stays disabled until it's actually ready instead of
+  // silently failing with "no documents indexed" if someone asks early.
+  statusEl.textContent = `Loading search index for ${year} (this can take a little while - it's a large file)...`;
   try {
     state.yearIndex = await loadYearIndex(year);
     statusEl.textContent = `${state.yearIndex.chunks.length} indexed excerpts across ${state.yearIndex.docs.length} documents for ${year}.`;
+    setChatEnabled(true);
   } catch (err) {
     statusEl.textContent = `Could not load index for ${year}: ${err.message}`;
+    setChatEnabled(false, 'Failed to load the search index - see status message above.');
   }
+}
+
+function setChatEnabled(enabled, placeholder) {
+  const input = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('send-btn');
+  input.disabled = !enabled;
+  sendBtn.disabled = !enabled;
+  if (!enabled && placeholder) input.placeholder = placeholder;
+  else if (enabled) input.placeholder = "Ask a question about the selected tax year's IRS documents...";
 }
 
 function wireSettingsPanel() {
@@ -88,8 +104,10 @@ function wireChatForm() {
     e.preventDefault();
     const question = input.value.trim();
     if (!question) return;
+    // Belt-and-suspenders: the input is disabled until the index is ready
+    // (see setChatEnabled), but guard here too in case this fires anyway.
     if (!state.yearIndex || !state.yearIndex.chunks.length) {
-      addNoAnswer('No documents are indexed for the selected year yet.');
+      addNoAnswer('The search index for this year is not ready yet - please wait for it to finish loading.');
       return;
     }
 

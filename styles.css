@@ -295,6 +295,12 @@ button.danger:hover { background: #8f3220; }
 
 .thinking { color: var(--muted); font-style: italic; font-size: 0.9rem; }
 
+#chat-input:disabled, #send-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+#chat-input:disabled { background: var(--bg); }
+
 #chat-form {
   display: flex;
   gap: 0.5rem;
