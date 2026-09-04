@@ -1,0 +1,300 @@
+:root {
+  --bg: #f7f5f2;
+  --panel: #ffffff;
+  --border: #e0dcd5;
+  --text: #2b2620;
+  --muted: #756f66;
+  --accent: #8a5a2c;
+  --accent-dark: #6b4520;
+  --danger: #b3402a;
+  --excerpt-bg: #fbf6ec;
+  --excerpt-border: #d9c8a3;
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ---------- API key overlay ---------- */
+
+.overlay[hidden] { display: none; }
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 26, 20, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.overlay-box {
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
+
+.overlay-box h1 { font-size: 1.3rem; margin-top: 0; }
+
+#key-form {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+#key-input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.warning {
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: #fbf6ec;
+  border: 1px solid var(--excerpt-border);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+}
+
+.error { color: var(--danger); font-size: 0.85rem; }
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  background: var(--accent);
+  color: white;
+  font-size: 0.9rem;
+}
+button:hover { background: var(--accent-dark); }
+button.danger { background: var(--danger); margin-top: 0.75rem; width: 100%; }
+button.danger:hover { background: #8f3220; }
+
+/* ---------- App layout ---------- */
+
+#app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  height: 100vh;
+}
+#app[hidden] { display: none; }
+
+#app.with-preview {
+  grid-template-columns: 280px 1fr 420px;
+}
+
+#sidebar {
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-header h2 { font-size: 1rem; margin: 0; }
+#settings-btn {
+  background: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  padding: 0.2rem 0.4rem;
+}
+#settings-btn:hover { background: var(--bg); color: var(--text); }
+
+#sidebar label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+#year-select, #model-select {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: white;
+}
+
+#doc-tree { flex: 1; overflow-y: auto; }
+
+.doc-category { margin-top: 0.75rem; }
+.doc-category h3 {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  color: var(--muted);
+  margin: 0 0 0.25rem;
+}
+.doc-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  color: var(--text);
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.25;
+}
+.doc-item:hover { background: var(--bg); }
+.doc-item .doc-number { display: block; font-weight: 600; font-size: 0.8rem; }
+.doc-item .doc-title { display: block; color: var(--muted); font-size: 0.75rem; }
+
+.settings-panel[hidden] { display: none; }
+.settings-panel {
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.settings-panel h3 { margin: 0; font-size: 0.85rem; }
+
+.empty-note, .error-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding: 0.5rem;
+}
+
+/* ---------- Chat area ---------- */
+
+#chat-area {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.msg { max-width: 720px; }
+.msg-user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px 10px 2px 10px;
+}
+.msg-assistant { align-self: stretch; max-width: 760px; }
+
+.answer-section { margin-bottom: 0.9rem; }
+.answer-section h4 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 0 0 0.4rem;
+}
+
+.excerpt {
+  background: var(--excerpt-bg);
+  border: 1px solid var(--excerpt-border);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+.excerpt blockquote {
+  margin: 0 0 0.4rem;
+  font-style: italic;
+  white-space: pre-wrap;
+}
+.excerpt cite {
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.plain-english {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.no-answer {
+  background: #fbeeea;
+  border: 1px solid #e3b7a6;
+  color: #7a3320;
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.thinking { color: var(--muted); font-style: italic; font-size: 0.9rem; }
+
+#chat-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--panel);
+}
+#chat-input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+}
+.status { font-size: 0.75rem; color: var(--muted); padding: 0 1.5rem 0.75rem; margin: 0; }
+
+/* ---------- Preview panel ---------- */
+
+.preview-panel[hidden] { display: none; }
+.preview-panel {
+  border-left: 1px solid var(--border);
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+}
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+#preview-close {
+  background: none;
+  color: var(--muted);
+  font-size: 1.2rem;
+  padding: 0 0.3rem;
+}
+#preview-frame { flex: 1; border: none; }

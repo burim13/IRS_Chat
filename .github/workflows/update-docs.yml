@@ -1,0 +1,63 @@
+name: Update IRS documents and search index
+
+on:
+  workflow_dispatch:
+    inputs:
+      year:
+        description: 'Tax year to download and index (e.g. 2025)'
+        required: true
+        default: '2025'
+  schedule:
+    # Monthly, 06:00 UTC on the 1st. Re-run manually via workflow_dispatch
+    # for a specific year whenever you want to pull a different one.
+    - cron: '0 6 1 * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install script dependencies
+        working-directory: scripts
+        run: npm ci
+
+      - name: Determine tax year
+        id: vars
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "year=${{ github.event.inputs.year }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "year=$(date -u +%Y)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download documents
+        working-directory: scripts
+        run: node download.js ${{ steps.vars.outputs.year }}
+
+      - name: Build search index
+        working-directory: scripts
+        run: node build-index.js ${{ steps.vars.outputs.year }}
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add irs-docs
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update IRS documents and index for tax year ${{ steps.vars.outputs.year }}"
+            git push
+          fi

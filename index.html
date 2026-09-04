@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IRS Document Research Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Blocking overlay shown until a Claude API key is stored -->
+  <div id="key-overlay" class="overlay">
+    <div class="overlay-box">
+      <h1>IRS Document Research Chat</h1>
+      <p>Enter your Claude API key to enable chat. Answers are drawn only from the indexed IRS documents in this repository — never from the model's general knowledge.</p>
+      <form id="key-form">
+        <input id="key-input" type="password" placeholder="sk-ant-..." autocomplete="off" required />
+        <button type="submit">Save key</button>
+      </form>
+      <p class="warning">
+        This key is stored only in this browser's <code>localStorage</code>, on this machine, and is sent
+        directly from your browser to Anthropic's API — never to any other server. It is visible to
+        anyone with access to this browser's developer tools. Do not use this on a shared computer.
+      </p>
+      <p id="key-error" class="error" hidden></p>
+    </div>
+  </div>
+
+  <div id="app" hidden>
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <h2>IRS Documents</h2>
+        <button id="settings-btn" title="Settings" aria-label="Settings">&#9881;</button>
+      </div>
+
+      <label for="year-select">Tax year</label>
+      <select id="year-select"></select>
+
+      <nav id="doc-tree" aria-label="Document library"></nav>
+
+      <div id="settings-panel" class="settings-panel" hidden>
+        <h3>Settings</h3>
+        <label for="model-select">Claude model</label>
+        <select id="model-select">
+          <option value="claude-sonnet-5">Sonnet 5 (recommended)</option>
+          <option value="claude-opus-5">Opus 5 (slower, more capable)</option>
+          <option value="claude-haiku-4-5-20251001">Haiku 4.5 (fastest)</option>
+        </select>
+        <button id="clear-key-btn" class="danger">Clear API key</button>
+      </div>
+    </aside>
+
+    <main id="chat-area">
+      <div id="messages" role="log" aria-live="polite"></div>
+
+      <form id="chat-form">
+        <textarea id="chat-input" placeholder="Ask a question about the selected tax year's IRS documents..." rows="2" required></textarea>
+        <button type="submit" id="send-btn">Send</button>
+      </form>
+      <p id="index-status" class="status"></p>
+    </main>
+
+    <div id="preview-panel" class="preview-panel" hidden>
+      <div class="preview-header">
+        <span id="preview-title"></span>
+        <button id="preview-close" aria-label="Close preview">&times;</button>
+      </div>
+      <iframe id="preview-frame" title="Document preview"></iframe>
+    </div>
+  </div>
+
+  <script type="module" src="app/main.js"></script>
+</body>
+</html>

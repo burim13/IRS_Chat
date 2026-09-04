@@ -1,0 +1,45 @@
+{
+  "years": [
+    "2025"
+  ],
+  "docsByYear": {
+    "2025": {
+      "forms": [
+        {
+          "code": "f1040",
+          "file": "2025/forms/f1040.pdf",
+          "number": "Form 1040",
+          "title": "U.S. Individual Income Tax Return"
+        },
+        {
+          "code": "f1040sc",
+          "file": "2025/forms/f1040sc.pdf",
+          "number": "Schedule C (Form 1040)",
+          "title": "Profit or Loss From Business (Sole Proprietorship)"
+        }
+      ],
+      "instructions": [
+        {
+          "code": "i1040gi",
+          "file": "2025/instructions/i1040gi.pdf",
+          "number": "Instructions for Form 1040",
+          "title": "Instructions for Form 1040 and Form 1040-SR"
+        },
+        {
+          "code": "i1040sc",
+          "file": "2025/instructions/i1040sc.pdf",
+          "number": "Instructions for Schedule C (Form 1040)",
+          "title": "Instructions for Schedule C"
+        }
+      ],
+      "publications": [
+        {
+          "code": "p334",
+          "file": "2025/publications/p334.pdf",
+          "number": "Publication 334",
+          "title": "Tax Guide for Small Business"
+        }
+      ]
+    }
+  }
+}
