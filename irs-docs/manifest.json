@@ -14,47 +14,974 @@
           "related": []
         },
         {
+          "code": "f1040es",
+          "file": "2025/forms/f1040es.pdf",
+          "number": "Form 1040-ES",
+          "title": "Estimated Tax For Individuals",
+          "family": "1040es",
+          "related": []
+        },
+        {
+          "code": "f1040s",
+          "file": "2025/forms/f1040s.pdf",
+          "number": "Form 1040-SR",
+          "title": "U.S. Income Tax Return for Seniors",
+          "family": "1040sr",
+          "related": []
+        },
+        {
+          "code": "f1040s1",
+          "file": "2025/forms/f1040s1.pdf",
+          "number": "Form 1040 (Schedule 1)",
+          "title": "Additional Income and Adjustments to Income",
+          "family": "1040schedule1",
+          "related": []
+        },
+        {
+          "code": "f1040s2",
+          "file": "2025/forms/f1040s2.pdf",
+          "number": "Form 1040 (Schedule 2)",
+          "title": "Additional Taxes",
+          "family": "1040schedule2",
+          "related": []
+        },
+        {
+          "code": "f1040s3",
+          "file": "2025/forms/f1040s3.pdf",
+          "number": "Form 1040 (Schedule 3)",
+          "title": "Additional Credits and Payments",
+          "family": "1040schedule3",
+          "related": []
+        },
+        {
+          "code": "f1040s8",
+          "file": "2025/forms/f1040s8.pdf",
+          "number": "Form 1040 (Schedule 8812)",
+          "title": "Credits for Qualifying Children and Other Dependents",
+          "family": "1040schedule8812",
+          "related": []
+        },
+        {
+          "code": "f1040sa",
+          "file": "2025/forms/f1040sa.pdf",
+          "number": "Form 1040 (Schedule A)",
+          "title": "Itemized Deductions",
+          "family": "1040schedulea",
+          "related": [
+            "p502",
+            "p526",
+            "p936"
+          ]
+        },
+        {
+          "code": "f1040sb",
+          "file": "2025/forms/f1040sb.pdf",
+          "number": "Form 1040 (Schedule B)",
+          "title": "Interest and Ordinary Dividends",
+          "family": "1040scheduleb",
+          "related": [
+            "p550"
+          ]
+        },
+        {
           "code": "f1040sc",
           "file": "2025/forms/f1040sc.pdf",
-          "number": "Schedule C (Form 1040)",
+          "number": "Form 1040 (Schedule C)",
           "title": "Profit or Loss From Business (Sole Proprietorship)",
-          "family": "1040sc",
+          "family": "1040schedulec",
           "related": [
-            "p334"
+            "p334",
+            "p463",
+            "f4562",
+            "i4562",
+            "f8829",
+            "i8829",
+            "f1040sse",
+            "i1040sse"
           ]
+        },
+        {
+          "code": "f1040sd",
+          "file": "2025/forms/f1040sd.pdf",
+          "number": "Form 1040 (Schedule D)",
+          "title": "Capital Gains and Losses",
+          "family": "1040scheduled",
+          "related": [
+            "p550",
+            "f8949",
+            "i8949"
+          ]
+        },
+        {
+          "code": "f1040se",
+          "file": "2025/forms/f1040se.pdf",
+          "number": "Form 1040 (Schedule E)",
+          "title": "Supplemental Income and Loss",
+          "family": "1040schedulee",
+          "related": [
+            "p527"
+          ]
+        },
+        {
+          "code": "f1040sei",
+          "file": "2025/forms/f1040sei.pdf",
+          "number": "Form 1040 (Schedule EIC)",
+          "title": "Earned Income Credit Qualifying Child Information",
+          "family": "1040scheduleeic",
+          "related": []
+        },
+        {
+          "code": "f1040sf",
+          "file": "2025/forms/f1040sf.pdf",
+          "number": "Form 1040 (Schedule F)",
+          "title": "Profit or Loss From Farming",
+          "family": "1040schedulef",
+          "related": [
+            "p225"
+          ]
+        },
+        {
+          "code": "f1040sh",
+          "file": "2025/forms/f1040sh.pdf",
+          "number": "Form 1040 (Schedule H)",
+          "title": "Household Employment Taxes",
+          "family": "1040scheduleh",
+          "related": []
+        },
+        {
+          "code": "f1040sj",
+          "file": "2025/forms/f1040sj.pdf",
+          "number": "Form 1040 (Schedule J)",
+          "title": "Income Averaging for Individuals With Income from Farming or Fishing",
+          "family": "1040schedulej",
+          "related": []
+        },
+        {
+          "code": "f1040sr",
+          "file": "2025/forms/f1040sr.pdf",
+          "number": "Form 1040 (Schedule R)",
+          "title": "Credit for the Elderly or the Disabled",
+          "family": "1040scheduler",
+          "related": []
+        },
+        {
+          "code": "f1040sse",
+          "file": "2025/forms/f1040sse.pdf",
+          "number": "Form 1040 (Schedule SE)",
+          "title": "Self-Employment Tax",
+          "family": "1040schedulese",
+          "related": [
+            "p334",
+            "f1040sc",
+            "i1040sc"
+          ]
+        },
+        {
+          "code": "f1040x",
+          "file": "2025/forms/f1040x.pdf",
+          "number": "Form 1040-X",
+          "title": "Amended U.S. Individual Income Tax Return",
+          "family": "1040x",
+          "related": []
+        },
+        {
+          "code": "f1099msc",
+          "file": "2025/forms/f1099msc.pdf",
+          "number": "Form 1099-MISC",
+          "title": "Miscellaneous Information",
+          "family": "1099misc",
+          "related": []
+        },
+        {
+          "code": "f1099nec",
+          "file": "2025/forms/f1099nec.pdf",
+          "number": "Form 1099-NEC",
+          "title": "Nonemployee Compensation - Form 1099 NEC",
+          "family": "1099nec",
+          "related": []
+        },
+        {
+          "code": "f2106",
+          "file": "2025/forms/f2106.pdf",
+          "number": "Form 2106",
+          "title": "Employee Business Expenses",
+          "family": "2106",
+          "related": [
+            "p463"
+          ]
+        },
+        {
+          "code": "f2210",
+          "file": "2025/forms/f2210.pdf",
+          "number": "Form 2210",
+          "title": "Underpayment of Estimated Tax by Individuals, Estates and Trusts",
+          "family": "2210",
+          "related": []
+        },
+        {
+          "code": "f2441",
+          "file": "2025/forms/f2441.pdf",
+          "number": "Form 2441",
+          "title": "Child and Dependent Care Expenses",
+          "family": "2441",
+          "related": []
+        },
+        {
+          "code": "f3903",
+          "file": "2025/forms/f3903.pdf",
+          "number": "Form 3903",
+          "title": "Moving Expenses",
+          "family": "3903",
+          "related": []
+        },
+        {
+          "code": "f4562",
+          "file": "2025/forms/f4562.pdf",
+          "number": "Form 4562",
+          "title": "Depreciation and Amortization (Including Information on Listed Property)",
+          "family": "4562",
+          "related": [
+            "p946",
+            "f1040sc",
+            "i1040sc"
+          ]
+        },
+        {
+          "code": "f4684",
+          "file": "2025/forms/f4684.pdf",
+          "number": "Form 4684",
+          "title": "Casualties and Thefts",
+          "family": "4684",
+          "related": []
+        },
+        {
+          "code": "f4797",
+          "file": "2025/forms/f4797.pdf",
+          "number": "Form 4797",
+          "title": "Sales of Business Property",
+          "family": "4797",
+          "related": []
+        },
+        {
+          "code": "f4868",
+          "file": "2025/forms/f4868.pdf",
+          "number": "Form 4868",
+          "title": "Application for Automatic Extension of Time to File U.S. Individual Income Tax Return",
+          "family": "4868",
+          "related": []
+        },
+        {
+          "code": "f4952",
+          "file": "2025/forms/f4952.pdf",
+          "number": "Form 4952",
+          "title": "Investment Interest Expense Deduction",
+          "family": "4952",
+          "related": []
+        },
+        {
+          "code": "f5329",
+          "file": "2025/forms/f5329.pdf",
+          "number": "Form 5329",
+          "title": "Additional Taxes on Qualified Plans (Including IRAs) and Other Tax-Favored Accounts",
+          "family": "5329",
+          "related": []
+        },
+        {
+          "code": "f5695",
+          "file": "2025/forms/f5695.pdf",
+          "number": "Form 5695",
+          "title": "Residential Energy Credits",
+          "family": "5695",
+          "related": [
+            "p529"
+          ]
+        },
+        {
+          "code": "f6198",
+          "file": "2025/forms/f6198.pdf",
+          "number": "Form 6198",
+          "title": "At-Risk Limitations",
+          "family": "6198",
+          "related": []
+        },
+        {
+          "code": "f6251",
+          "file": "2025/forms/f6251.pdf",
+          "number": "Form 6251",
+          "title": "Alternative Minimum Tax - Individuals",
+          "family": "6251",
+          "related": []
+        },
+        {
+          "code": "f6252",
+          "file": "2025/forms/f6252.pdf",
+          "number": "Form 6252",
+          "title": "Installment Sale Income",
+          "family": "6252",
+          "related": []
+        },
+        {
+          "code": "f8283",
+          "file": "2025/forms/f8283.pdf",
+          "number": "Form 8283",
+          "title": "Noncash Charitable Contributions",
+          "family": "8283",
+          "related": []
+        },
+        {
+          "code": "f8582",
+          "file": "2025/forms/f8582.pdf",
+          "number": "Form 8582",
+          "title": "Passive Activity Loss Limitations",
+          "family": "8582",
+          "related": []
+        },
+        {
+          "code": "f8606",
+          "file": "2025/forms/f8606.pdf",
+          "number": "Form 8606",
+          "title": "Nondeductible IRAs",
+          "family": "8606",
+          "related": [
+            "p590a",
+            "p590b"
+          ]
+        },
+        {
+          "code": "f8829",
+          "file": "2025/forms/f8829.pdf",
+          "number": "Form 8829",
+          "title": "Expenses for Business Use of Your Home",
+          "family": "8829",
+          "related": [
+            "p587",
+            "f1040sc",
+            "i1040sc"
+          ]
+        },
+        {
+          "code": "f8863",
+          "file": "2025/forms/f8863.pdf",
+          "number": "Form 8863",
+          "title": "Education Credits (American Opportunity and Lifetime Learning Credits)",
+          "family": "8863",
+          "related": [
+            "p970"
+          ]
+        },
+        {
+          "code": "f8889",
+          "file": "2025/forms/f8889.pdf",
+          "number": "Form 8889",
+          "title": "Health Savings Accounts (HSAs)",
+          "family": "8889",
+          "related": []
+        },
+        {
+          "code": "f8949",
+          "file": "2025/forms/f8949.pdf",
+          "number": "Form 8949",
+          "title": "Sales and Other Dispositions of Capital Assets",
+          "family": "8949",
+          "related": [
+            "p550",
+            "f1040sd",
+            "i1040sd"
+          ]
+        },
+        {
+          "code": "f8959",
+          "file": "2025/forms/f8959.pdf",
+          "number": "Form 8959",
+          "title": "Additional Medicare Tax",
+          "family": "8959",
+          "related": []
+        },
+        {
+          "code": "f8960",
+          "file": "2025/forms/f8960.pdf",
+          "number": "Form 8960",
+          "title": "Net Investment Income Tax - Individuals, Estates, and Trusts",
+          "family": "8960",
+          "related": []
+        },
+        {
+          "code": "f8962",
+          "file": "2025/forms/f8962.pdf",
+          "number": "Form 8962",
+          "title": "Premium Tax Credit (PTC)",
+          "family": "8962",
+          "related": []
+        },
+        {
+          "code": "f8995",
+          "file": "2025/forms/f8995.pdf",
+          "number": "Form 8995",
+          "title": "Qualified Business Income Deduction Simplified Computation",
+          "family": "8995",
+          "related": []
+        },
+        {
+          "code": "f8995a",
+          "file": "2025/forms/f8995a.pdf",
+          "number": "Form 8995-A",
+          "title": "Qualified Business Income Deduction",
+          "family": "8995a",
+          "related": []
+        },
+        {
+          "code": "f9465",
+          "file": "2025/forms/f9465.pdf",
+          "number": "Form 9465",
+          "title": "Installment Agreement Request",
+          "family": "9465",
+          "related": []
+        },
+        {
+          "code": "fss4",
+          "file": "2025/forms/fss4.pdf",
+          "number": "Form SS-4",
+          "title": "Application for Employer Identification Number",
+          "family": "ss4",
+          "related": []
+        },
+        {
+          "code": "fw9",
+          "file": "2025/forms/fw9.pdf",
+          "number": "Form W-9",
+          "title": "Request for Taxpayer Identification Number and Certification",
+          "family": "w9",
+          "related": []
         }
       ],
       "instructions": [
         {
           "code": "i1040gi",
           "file": "2025/instructions/i1040gi.pdf",
-          "number": "Instructions for Form 1040",
-          "title": "Instructions for Form 1040 and Form 1040-SR",
+          "number": "Instruction 1040",
+          "title": "Instructions for Form 1040 (and Form 1040-SR)",
           "family": "1040",
           "related": []
         },
         {
+          "code": "i1040s8",
+          "file": "2025/instructions/i1040s8.pdf",
+          "number": "Instruction 1040 (Schedule 8812)",
+          "title": "Instructions for Schedule 8812 (Form 1040), Credit for Qualifying Children and Other Dependents",
+          "family": "1040schedule8812",
+          "related": []
+        },
+        {
+          "code": "i1040sb",
+          "file": "2025/instructions/i1040sb.pdf",
+          "number": "Instruction 1040 (Schedule B)",
+          "title": "Instructions for Schedule B (Form 1040), Interest and Ordinary Dividends",
+          "family": "1040scheduleb",
+          "related": [
+            "p550"
+          ]
+        },
+        {
           "code": "i1040sc",
           "file": "2025/instructions/i1040sc.pdf",
-          "number": "Instructions for Schedule C (Form 1040)",
-          "title": "Instructions for Schedule C",
-          "family": "1040sc",
+          "number": "Instruction 1040 (Schedule C)",
+          "title": "Instructions for Schedule C (Form 1040), Profit or Loss From Business",
+          "family": "1040schedulec",
           "related": [
-            "p334"
+            "p334",
+            "p463",
+            "f4562",
+            "i4562",
+            "f8829",
+            "i8829",
+            "f1040sse",
+            "i1040sse"
           ]
+        },
+        {
+          "code": "i1040sca",
+          "file": "2025/instructions/i1040sca.pdf",
+          "number": "Instruction 1040 (Schedule A)",
+          "title": "Instructions for Schedule A (Form 1040), Itemized Deductions",
+          "family": "1040schedulea",
+          "related": [
+            "p502",
+            "p526",
+            "p936"
+          ]
+        },
+        {
+          "code": "i1040sd",
+          "file": "2025/instructions/i1040sd.pdf",
+          "number": "Instruction 1040 (Schedule D)",
+          "title": "Instructions for Schedule D (Form 1040), Capital Gains and Losses",
+          "family": "1040scheduled",
+          "related": [
+            "p550",
+            "f8949",
+            "i8949"
+          ]
+        },
+        {
+          "code": "i1040se",
+          "file": "2025/instructions/i1040se.pdf",
+          "number": "Instruction 1040 (Schedule E)",
+          "title": "Instructions for Schedule E (Form 1040), Supplemental Income and Loss",
+          "family": "1040schedulee",
+          "related": [
+            "p527"
+          ]
+        },
+        {
+          "code": "i1040sf",
+          "file": "2025/instructions/i1040sf.pdf",
+          "number": "Instruction 1040 (Schedule F)",
+          "title": "Instructions for Schedule F (Form 1040), Profit or Loss From Farming",
+          "family": "1040schedulef",
+          "related": [
+            "p225"
+          ]
+        },
+        {
+          "code": "i1040sh",
+          "file": "2025/instructions/i1040sh.pdf",
+          "number": "Instruction 1040 (Schedule H)",
+          "title": "Instructions for Schedule H (Form 1040), Household Employment Taxes",
+          "family": "1040scheduleh",
+          "related": []
+        },
+        {
+          "code": "i1040sj",
+          "file": "2025/instructions/i1040sj.pdf",
+          "number": "Instruction 1040 (Schedule J)",
+          "title": "Instructions for Schedule J (Form 1040), Income Averaging for Individuals With Income from Farming or Fishing",
+          "family": "1040schedulej",
+          "related": []
+        },
+        {
+          "code": "i1040sr",
+          "file": "2025/instructions/i1040sr.pdf",
+          "number": "Instruction 1040 (Schedule R)",
+          "title": "Instructions for Schedule R (Form 1040), Credit for the Elderly or the Disabled",
+          "family": "1040scheduler",
+          "related": []
+        },
+        {
+          "code": "i1040sse",
+          "file": "2025/instructions/i1040sse.pdf",
+          "number": "Instruction 1040 (Schedule SE)",
+          "title": "Instructions for Schedule SE (Form 1040), Self-Employment Tax",
+          "family": "1040schedulese",
+          "related": [
+            "p334",
+            "f1040sc",
+            "i1040sc"
+          ]
+        },
+        {
+          "code": "i1040x",
+          "file": "2025/instructions/i1040x.pdf",
+          "number": "Instruction 1040-X",
+          "title": "Instructions for Form 1040-X, Amended U.S. Individual Income Tax Return",
+          "family": "1040x",
+          "related": []
+        },
+        {
+          "code": "i1099mec",
+          "file": "2025/instructions/i1099mec.pdf",
+          "number": "Instruction 1099-MISC and 1099-NEC",
+          "title": "Instructions for Forms 1099-MISC and 1099-NEC, Miscellaneous Infomation and Nonemployee Compensation",
+          "family": "1099miscand1099nec",
+          "related": []
+        },
+        {
+          "code": "i2210",
+          "file": "2025/instructions/i2210.pdf",
+          "number": "Instruction 2210",
+          "title": "Instructions for Form 2210, Underpayment of Estimated Tax by Individuals, Estates, and Trusts",
+          "family": "2210",
+          "related": []
+        },
+        {
+          "code": "i4562",
+          "file": "2025/instructions/i4562.pdf",
+          "number": "Instruction 4562",
+          "title": "Instructions for Form 4562, Depreciation and Amortization (Including Information on Listed Property)",
+          "family": "4562",
+          "related": [
+            "p946",
+            "f1040sc",
+            "i1040sc"
+          ]
+        },
+        {
+          "code": "i4684",
+          "file": "2025/instructions/i4684.pdf",
+          "number": "Instruction 4684",
+          "title": "Instructions for Form 4684, Casualties and Thefts",
+          "family": "4684",
+          "related": []
+        },
+        {
+          "code": "i4797",
+          "file": "2025/instructions/i4797.pdf",
+          "number": "Instruction 4797",
+          "title": "Instructions for Form 4797, Sales of Business Property",
+          "family": "4797",
+          "related": []
+        },
+        {
+          "code": "i5329",
+          "file": "2025/instructions/i5329.pdf",
+          "number": "Instruction 5329",
+          "title": "Instructions for Form 5329, Additional Taxes on Qualified Plans (Including IRAs) and Other Tax-Favored Accounts",
+          "family": "5329",
+          "related": []
+        },
+        {
+          "code": "i5695",
+          "file": "2025/instructions/i5695.pdf",
+          "number": "Instruction 5695",
+          "title": "Instructions for Form 5695, Residential Energy Credits",
+          "family": "5695",
+          "related": [
+            "p529"
+          ]
+        },
+        {
+          "code": "i6251",
+          "file": "2025/instructions/i6251.pdf",
+          "number": "Instruction 6251",
+          "title": "Instructions for Form 6251, Alternative Minimum Tax - Individuals",
+          "family": "6251",
+          "related": []
+        },
+        {
+          "code": "i8283",
+          "file": "2025/instructions/i8283.pdf",
+          "number": "Instruction 8283",
+          "title": "Instructions for Form 8283, Noncash Charitable Contributions",
+          "family": "8283",
+          "related": []
+        },
+        {
+          "code": "i8582",
+          "file": "2025/instructions/i8582.pdf",
+          "number": "Instruction 8582",
+          "title": "Instructions for Form 8582, Passive Activity Loss Limitations",
+          "family": "8582",
+          "related": []
+        },
+        {
+          "code": "i8606",
+          "file": "2025/instructions/i8606.pdf",
+          "number": "Instruction 8606",
+          "title": "Instructions for Form 8606, Nondeductible IRAs",
+          "family": "8606",
+          "related": [
+            "p590a",
+            "p590b"
+          ]
+        },
+        {
+          "code": "i8829",
+          "file": "2025/instructions/i8829.pdf",
+          "number": "Instruction 8829",
+          "title": "Instructions for Form 8829, Expenses for Business Use of Your Home",
+          "family": "8829",
+          "related": [
+            "p587",
+            "f1040sc",
+            "i1040sc"
+          ]
+        },
+        {
+          "code": "i8863",
+          "file": "2025/instructions/i8863.pdf",
+          "number": "Instruction 8863",
+          "title": "Instructions for Form 8863, Education Credits (American Opportunity and Lifetime Learning Credits)",
+          "family": "8863",
+          "related": [
+            "p970"
+          ]
+        },
+        {
+          "code": "i8889",
+          "file": "2025/instructions/i8889.pdf",
+          "number": "Instruction 8889",
+          "title": "Instructions for Form 8889, Health Savings Accounts (HSAs)",
+          "family": "8889",
+          "related": []
+        },
+        {
+          "code": "i8949",
+          "file": "2025/instructions/i8949.pdf",
+          "number": "Instruction 8949",
+          "title": "Instructions for Form 8949, Sales and Other Dispositions of Capital Assets",
+          "family": "8949",
+          "related": [
+            "p550",
+            "f1040sd",
+            "i1040sd"
+          ]
+        },
+        {
+          "code": "i8960",
+          "file": "2025/instructions/i8960.pdf",
+          "number": "Instruction 8960",
+          "title": "Instructions for Form 8960, Net Investment Income Tax - Individuals, Estates, and Trusts",
+          "family": "8960",
+          "related": []
+        },
+        {
+          "code": "i8962",
+          "file": "2025/instructions/i8962.pdf",
+          "number": "Instruction 8962",
+          "title": "Instructions for Form 8962, Premium Tax Credit (PTC)",
+          "family": "8962",
+          "related": []
+        },
+        {
+          "code": "i8995a",
+          "file": "2025/instructions/i8995a.pdf",
+          "number": "Instruction 8995-A",
+          "title": "Instructions for Form 8995-A, Deduction for Qualified Business Income",
+          "family": "8995a",
+          "related": []
+        },
+        {
+          "code": "iss4",
+          "file": "2025/instructions/iss4.pdf",
+          "number": "Instruction SS-4",
+          "title": "Instructions for Form SS-4, Application for Employer Identification Number (EIN)",
+          "family": "ss4",
+          "related": []
         }
       ],
       "publications": [
         {
+          "code": "p17",
+          "file": "2025/publications/p17.pdf",
+          "number": "Publication 17",
+          "title": "Your Federal Income Tax (For Individuals)",
+          "family": "17",
+          "related": []
+        },
+        {
+          "code": "p225",
+          "file": "2025/publications/p225.pdf",
+          "number": "Publication 225",
+          "title": "Farmer's Tax Guide",
+          "family": "225",
+          "related": []
+        },
+        {
           "code": "p334",
           "file": "2025/publications/p334.pdf",
           "number": "Publication 334",
-          "title": "Tax Guide for Small Business",
+          "title": "Tax Guide For Small Business (For Individuals Who Use Schedule C)",
           "family": "334",
-          "related": [
-            "f1040sc",
-            "i1040sc"
-          ]
+          "related": []
+        },
+        {
+          "code": "p463",
+          "file": "2025/publications/p463.pdf",
+          "number": "Publication 463",
+          "title": "Travel, Gift, and Car Expenses",
+          "family": "463",
+          "related": []
+        },
+        {
+          "code": "p501",
+          "file": "2025/publications/p501.pdf",
+          "number": "Publication 501",
+          "title": "Dependents, Standard Deduction, and Filing Information",
+          "family": "501",
+          "related": []
+        },
+        {
+          "code": "p502",
+          "file": "2025/publications/p502.pdf",
+          "number": "Publication 502",
+          "title": "Medical and Dental Expenses",
+          "family": "502",
+          "related": []
+        },
+        {
+          "code": "p503",
+          "file": "2025/publications/p503.pdf",
+          "number": "Publication 503",
+          "title": "Child and Dependent Care Expenses",
+          "family": "503",
+          "related": []
+        },
+        {
+          "code": "p504",
+          "file": "2025/publications/p504.pdf",
+          "number": "Publication 504",
+          "title": "Divorced or Separated Individuals",
+          "family": "504",
+          "related": []
+        },
+        {
+          "code": "p505",
+          "file": "2025/publications/p505.pdf",
+          "number": "Publication 505",
+          "title": "Tax Withholding and Estimated Tax",
+          "family": "505",
+          "related": []
+        },
+        {
+          "code": "p525",
+          "file": "2025/publications/p525.pdf",
+          "number": "Publication 525",
+          "title": "Taxable and Nontaxable Income",
+          "family": "525",
+          "related": []
+        },
+        {
+          "code": "p526",
+          "file": "2025/publications/p526.pdf",
+          "number": "Publication 526",
+          "title": "Charitable Contributions",
+          "family": "526",
+          "related": []
+        },
+        {
+          "code": "p527",
+          "file": "2025/publications/p527.pdf",
+          "number": "Publication 527",
+          "title": "Residential Rental Property (Including Rental of Vacation Homes)",
+          "family": "527",
+          "related": []
+        },
+        {
+          "code": "p529",
+          "file": "2025/publications/p529.pdf",
+          "number": "Publication 529",
+          "title": "Miscellaneous Deductions",
+          "family": "529",
+          "related": []
+        },
+        {
+          "code": "p537",
+          "file": "2025/publications/p537.pdf",
+          "number": "Publication 537",
+          "title": "Installment Sales",
+          "family": "537",
+          "related": []
+        },
+        {
+          "code": "p544",
+          "file": "2025/publications/p544.pdf",
+          "number": "Publication 544",
+          "title": "Sales and Other Dispositions of Assets",
+          "family": "544",
+          "related": []
+        },
+        {
+          "code": "p550",
+          "file": "2025/publications/p550.pdf",
+          "number": "Publication 550",
+          "title": "Investment Income and Expenses",
+          "family": "550",
+          "related": []
+        },
+        {
+          "code": "p551",
+          "file": "2025/publications/p551.pdf",
+          "number": "Publication 551",
+          "title": "Basis of Assets",
+          "family": "551",
+          "related": []
+        },
+        {
+          "code": "p554",
+          "file": "2025/publications/p554.pdf",
+          "number": "Publication 554",
+          "title": "Tax Guide for Seniors",
+          "family": "554",
+          "related": []
+        },
+        {
+          "code": "p559",
+          "file": "2025/publications/p559.pdf",
+          "number": "Publication 559",
+          "title": "Survivors, Executors, and Administrators",
+          "family": "559",
+          "related": []
+        },
+        {
+          "code": "p575",
+          "file": "2025/publications/p575.pdf",
+          "number": "Publication 575",
+          "title": "Pension and Annuity Income",
+          "family": "575",
+          "related": []
+        },
+        {
+          "code": "p587",
+          "file": "2025/publications/p587.pdf",
+          "number": "Publication 587",
+          "title": "Business Use of Your Home",
+          "family": "587",
+          "related": []
+        },
+        {
+          "code": "p590a",
+          "file": "2025/publications/p590a.pdf",
+          "number": "Publication 590-A",
+          "title": "Contributions to Individual Retirement Arrangements (IRAs)",
+          "family": "590a",
+          "related": []
+        },
+        {
+          "code": "p590b",
+          "file": "2025/publications/p590b.pdf",
+          "number": "Publication 590-B",
+          "title": "Distributions from Individual Retirement Arrangements (IRAs)",
+          "family": "590b",
+          "related": []
+        },
+        {
+          "code": "p596",
+          "file": "2025/publications/p596.pdf",
+          "number": "Publication 596",
+          "title": "Earned Income Credit (EIC)",
+          "family": "596",
+          "related": []
+        },
+        {
+          "code": "p936",
+          "file": "2025/publications/p936.pdf",
+          "number": "Publication 936",
+          "title": "Home Mortgage Interest Deduction",
+          "family": "936",
+          "related": []
+        },
+        {
+          "code": "p946",
+          "file": "2025/publications/p946.pdf",
+          "number": "Publication 946",
+          "title": "How To Depreciate Property",
+          "family": "946",
+          "related": []
+        },
+        {
+          "code": "p969",
+          "file": "2025/publications/p969.pdf",
+          "number": "Publication 969",
+          "title": "Health Savings Accounts and Other Tax-Favored Health Plans",
+          "family": "969",
+          "related": []
+        },
+        {
+          "code": "p970",
+          "file": "2025/publications/p970.pdf",
+          "number": "Publication 970",
+          "title": "Tax Benefits for Education",
+          "family": "970",
+          "related": []
         }
       ]
     }
