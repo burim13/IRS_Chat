@@ -9,8 +9,7 @@
   --danger: #b3402a;
   --excerpt-bg: #fbf6ec;
   --excerpt-border: #d9c8a3;
-  --font-ui: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-ui: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-family: var(--font-ui);
 }
 
@@ -22,15 +21,22 @@ body {
   color: var(--text);
   height: 100vh;
   overflow: hidden;
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-ui);
   font-weight: 600;
   letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
 }
 
 /* ---------- API key overlay ---------- */
@@ -230,22 +236,23 @@ button.danger:hover { background: #8f3220; }
   border: 1px solid var(--excerpt-border);
   border-left: 4px solid var(--accent);
   border-radius: 6px;
-  padding: 0.7rem 0.9rem;
+  padding: 0.75rem 1rem;
   margin-bottom: 0.6rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 .excerpt blockquote {
   margin: 0 0 0.5rem;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.98rem;
-  line-height: 1.55;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
   white-space: pre-wrap;
 }
 .excerpt cite {
-  font-family: var(--font-ui);
+  display: block;
   font-style: normal;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
@@ -253,9 +260,9 @@ button.danger:hover { background: #8f3220; }
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 0.8rem 1rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
   white-space: pre-wrap;
 }
 
